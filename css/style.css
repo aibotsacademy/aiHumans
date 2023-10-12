@@ -894,7 +894,7 @@ li.agileinfo_share.team {
 /*-- //team --*/
 /*-- news --*/
 .wthree-almubimg {
-      background: url(../images/g4a.jpg)no-repeat center;
+      background: url(../images/service1.jpg)no-repeat center;
     background-size: cover;
     min-height: 435px;
     -webkit-transition: all 3s;
@@ -904,7 +904,7 @@ li.agileinfo_share.team {
     display: block;
 } 
 .wthree-almubimg2 {
-      background: url(../images/g5a.jpg)no-repeat center;
+      background: url(../images/service2.jpg)no-repeat center;
     background-size: cover;
     min-height: 435px;
     -webkit-transition: all 3s;
@@ -914,7 +914,7 @@ li.agileinfo_share.team {
     display: block;
 } 
 .wthree-almubimg3 {
-      background: url(../images/g5b.jpg)no-repeat center;
+      background: url(../images/service1.jpg)no-repeat center;
     background-size: cover;
     min-height: 435px;
     -webkit-transition: all 3s;
@@ -924,7 +924,7 @@ li.agileinfo_share.team {
     display: block;
 } 
 .wthree-almubimg4 {
-      background: url(../images/g5c.jpg)no-repeat center;
+      background: url(../images/service2.jpg)no-repeat center;
     background-size: cover;
     min-height: 435px;
     -webkit-transition: all 3s;
@@ -934,7 +934,7 @@ li.agileinfo_share.team {
     display: block;
 } 
 .wthree-almubimg5 {
-      background: url(../images/g5d.jpg)no-repeat center;
+      background: url(../images/service1.jpg)no-repeat center;
     background-size: cover;
     min-height: 435px;
     -webkit-transition: all 3s;
@@ -953,7 +953,7 @@ li.agileinfo_share.team {
     -ms-transition: 0.5s all;
 }
 .wthree-almubimg.wthree1-almubimg {
-    background: url(../images/g5aa.jpg)no-repeat center;
+    background: url(../images/service2.jpg)no-repeat center;
     background-size: cover;
 }
 .news-left, .news1-right {
