@@ -36,7 +36,7 @@
   window.fbAsyncInit = function () {
     // JavaScript SDK configuration and setup
     FB.init({
-      appId:    '1080762560004061', // Facebook App ID
+      appId:    '1080762560004061', // Meta App ID
       cookie:   true, // enable cookies
       xfbml:    true, // parse social plugins on this page
       version:  'v18.0' //Graph API version
@@ -58,48 +58,49 @@
     fbq && fbq('trackCustom', 'WhatsAppOnboardingStart', {appId: '1080762560004061', feature: 'whatsapp_embedded_signup'});
     
     // Launch Facebook login
-    FB.login(function (response) {
+    
+  
+  FB.login(function (response) {
       if (response.authResponse) {
         const code = response.authResponse.code;
-        // The returned code must be transmitted to your backend, 
-  // which will perform a server-to-server call from there to our servers for an access token
+        // The returned code must be transmitted to your backend
+        // there must then perform a server-to-server call to our servers for an access token
       } else {
         console.log('User cancelled login or did not fully authorize.');
       }
-    }, {
-      config_id: '993951181897221', // configuration ID goes here
+    },  
+    {	
+      config_id: 993951181897221, // configuration ID goes here
       response_type: 'code',    // must be set to 'code' for System User access token
       override_default_response_type: true, // when true, any response types passed in the "response_type" will take precedence over the default types
       extras: {
         setup: {
-        business: {
-            name: 'The AI Humans',
-            email: 'leandrocg@consultant.com',
+          business: {
+            name: 'Acme Inc.',
+            email: 'johndoe@acme.com',
             phone: {
               code: 506,
               number: '61600152'
             },
-            website: 'https://www.theaihumans.co',
+            website: 'https://www.acme.com',
             address: {
-              streetAddress1: 'San Jose',
-              city: 'Curridabat',
-              state: 'SJO',
-              zipPostal: '11801',
-              country: 'CR'
+              streetAddress1: '1 Acme Way',
+              city: 'Acme Town',
+              state: 'CA',
+              zipPostal: '94000',
+              country: 'US'
             },
             timezone: 'UTC-08:00'
           },
           phone: {
-            displayName: 'The AI Humans',
+            displayName: 'Acme Inc',
             category: 'ENTERTAIN',
-            description: 'We are an AI Startup for automating business process.',
+            description: 'Acme Inc. is a leading entertainment company.',
           }
         }
       }
     });
   }
-
-<button onclick="launchWhatsAppSignup()" style="background-color: #1877f2; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; height: 40px; padding: 0 24px;"> Login with Facebook </button>
 
 </script>
 
