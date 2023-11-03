@@ -32,7 +32,31 @@
 
 
 <!----------------EMBEDDED WA----------------------------------->
+
 <script>
+
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '648593814132686');
+fbq('track', 'PageView');
+
+ !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1080762560004061');
+  fbq('track', 'PageView', {appId: '1080762560004061', feature: 'whatsapp_embedded_signup'});
+
   window.fbAsyncInit = function () {
     // JavaScript SDK configuration and setup
     FB.init({
@@ -69,44 +93,47 @@
         console.log('User cancelled login or did not fully authorize.');
       }
     },  
-    {	
+    { 
       config_id: 993951181897221, // configuration ID goes here
       response_type: 'code',    // must be set to 'code' for System User access token
       override_default_response_type: true, // when true, any response types passed in the "response_type" will take precedence over the default types
       extras: {
         setup: {
           business: {
-            name: 'Acme Inc.',
-            email: 'johndoe@acme.com',
+            name: 'The AI Humans',
+            email: 'leandrocg@consultant.com',
             phone: {
               code: 506,
               number: '61600152'
             },
-            website: 'https://www.acme.com',
+            website: 'https://www.theaihumans.co',
             address: {
-              streetAddress1: '1 Acme Way',
-              city: 'Acme Town',
-              state: 'CA',
-              zipPostal: '94000',
-              country: 'US'
+              streetAddress1: 'San Jose',
+              city: 'Santa Ana',
+              state: 'SJO',
+              zipPostal: '11801',
+              country: 'CR'
             },
             timezone: 'UTC-08:00'
           },
           phone: {
-            displayName: 'Acme Inc',
+            displayName: 'The AI Humans',
             category: 'ENTERTAIN',
-            description: 'Acme Inc. is a leading entertainment company.',
+            description: 'We are an AI Startup that help businesses automate process.',
           }
         }
       }
     });
   }
+
 </script>
+
 
 <button onclick="launchWhatsAppSignup()"
   style="background-color: #1877f2; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; height: 40px; padding: 0 24px;">
   Login with Facebook
 </button>
+
 <!---------------END-- EMBEDDED WHATSAPP---------------------------------->
 
 
