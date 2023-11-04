@@ -73,7 +73,10 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-
+  // Facebook Login with JavaScript SDK
+  function launchWhatsAppSignup() {
+    // Conversion tracking code
+    fbq && fbq('trackCustom', 'WhatsAppOnboardingStart', {appId: '1080762560004061', feature: 'whatsapp_embedded_signup'});
     
     // Launch Facebook login
     
@@ -120,22 +123,6 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
     });
   }
 
-  // Facebook Login with JavaScript SDK
-  function launchWhatsAppSignup() {
-          FB.login(function(response) {
-            debugger;
-          }, {
-              "scope":"whatsapp_business_messaging,business_management,whatsapp_business_management,email",
-              "extras":{
-                  "feature":"whatsapp_embedded_signup",
-                  "version": 2,
-                  "setup":{
-                      
-                  }
-              }
-          })
-        }
-
 </script>
 
 
@@ -146,7 +133,6 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
 </button>
 
 <!---------------END-- EMBEDDED WHATSAPP---------------------------------->
-
 <!-- banner -->
 <div class="banner_top" id="home">
 	<div data-vide-bg ="video/saba.mp4">
