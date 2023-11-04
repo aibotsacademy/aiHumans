@@ -30,65 +30,109 @@
 </head>
 <body>
 
+<!----------------EMBEDDED WA----------------------------------->
+
+<!-- Meta Pixel Code -->
 <script>
-
-  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-    console.log('statusChangeCallback');
-    console.log(response);                   // The current login status of the person.
-    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();  
-    } else {                                 // Not logged into your webpage or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this webpage.';
-    }
-  }
-
-
-  function checkLoginState() {               // Called when a person is finished with the Login Button.
-    FB.getLoginStatus(function(response) {   // See the onlogin handler
-      statusChangeCallback(response);
-    });
-  }
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '648593814132686');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 
-  window.fbAsyncInit = function() {
+
+
+<script>
+  window.fbAsyncInit = function () {
+    // JavaScript SDK configuration and setup
     FB.init({
-      appId      : '1017109239436571',
-      cookie     : true,                     // Enable cookies to allow the server to access the session.
-      xfbml      : true,                     // Parse social plugins on this webpage.
-      version    : 'v18.0'           // Use this Graph API version for this call.
-    });
-
-
-    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-      statusChangeCallback(response);        // Returns the login status.
+      appId:    '1080762560004061', // Meta App ID
+      cookie:   true, // enable cookies
+      xfbml:    true, // parse social plugins on this page
+      version:  'v18.0' //Graph API version
     });
   };
- 
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+
+  // Load the JavaScript SDK asynchronously
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Facebook Login with JavaScript SDK
+  function launchWhatsAppSignup() {
+    // Conversion tracking code
+    fbq && fbq('trackCustom', 'WhatsAppOnboardingStart', {appId: '1080762560004061', feature: 'whatsapp_embedded_signup'});
+    
+    // Launch Facebook login
+    
+  
+  FB.login(function (response) {
+      if (response.authResponse) {
+        const code = response.authResponse.code;
+        // The returned code must be transmitted to your backend
+        // there must then perform a server-to-server call to our servers for an access token
+      } else {
+        console.log('User cancelled login or did not fully authorize.');
+      }
+    },  
+    {	
+      config_id: 993951181897221, // configuration ID goes here
+      response_type: 'code',    // must be set to 'code' for System User access token
+      override_default_response_type: true, // when true, any response types passed in the "response_type" will take precedence over the default types
+      extras: {
+        setup: {
+          business: {
+            name: 'The AI Humans',
+            email: 'leandrocg@consultant.com',
+            phone: {
+              code: 506,
+              number: '61600152'
+            },
+            website: 'https://www.theaihumans.co',
+            address: {
+              streetAddress1: 'San Jose',
+              city: 'Santa Ana',
+              state: 'SJO',
+              zipPostal: '11801',
+              country: 'CR'
+            },
+            timezone: 'UTC-08:00'
+          },
+          phone: {
+            displayName: 'The AI Humans',
+            category: 'ENTERTAIN',
+            description: 'We are an AI Startup that help businesses automate process.',
+          }
+        }
+      }
     });
   }
 
 </script>
 
 
-<!-- The JS SDK Login Button -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+<button onclick="launchWhatsAppSignup()"
+  style="background-color: #1877f2; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; height: 40px; padding: 0 24px;">
+  Login with Facebook
+</button>
 
-<div id="status">
-</div>
-
-<!-- Load the JS SDK asynchronously -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
-
+<!---------------END-- EMBEDDED WHATSAPP---------------------------------->
 
 <!-- banner -->
 <div class="banner_top" id="home">
