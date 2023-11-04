@@ -121,8 +121,21 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
         }
       }
     });
-  }
-
+// Facebook Login with JavaScript SDK
+        function launchWhatsAppSignup() {
+          FB.login(function(response) {
+            debugger;
+          }, {
+              "scope":"whatsapp_business_messaging,business_management,whatsapp_business_management,email",
+              "extras":{
+                  "feature":"whatsapp_embedded_signup",
+                  "version": 2,
+                  "setup":{
+                      
+                  }
+              }
+          })
+        }
 </script>
 
 
