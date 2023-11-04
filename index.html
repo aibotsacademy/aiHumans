@@ -86,6 +86,15 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
         const code = response.authResponse.code;
         // The returned code must be transmitted to your backend
         // there must then perform a server-to-server call to our servers for an access token
+    FB.api(
+      "/debug_token?input_token={input-token}",
+      function (response) {
+        if (response && !response.error) {
+          /* handle the result */
+        }
+      }
+    );
+
       } else {
         console.log('User cancelled login or did not fully authorize.');
       }
