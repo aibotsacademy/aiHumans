@@ -75,8 +75,20 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
 
   // Facebook Login with JavaScript SDK
   function launchWhatsAppSignup() {
-    // Conversion tracking code
-    fbq && fbq('trackCustom', 'WhatsAppOnboardingStart', {appId: '1080762560004061', feature: 'whatsapp_embedded_signup'});
+          FB.login(function(response) {
+            debugger;
+          }, {
+              "scope":"whatsapp_business_messaging,business_management,whatsapp_business_management,email",
+              "extras":{
+                  "feature":"whatsapp_embedded_signup",
+                  "version": 2,
+                  "setup":{
+                      
+                  }
+              }
+          })
+        }
+
     
     // Launch Facebook login
     
