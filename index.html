@@ -73,6 +73,35 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+
+const sessionInfoListener = (event) => {
+  if (event.origin !== "https://www.facebook.com") return;
+  try {
+    const eventData = JSON.parse(event.data);
+    console.log("[sessionInfoListener] get data", eventData);
+    if (eventData.type === "WA_EMBEDDED_SIGNUP") {
+      // if user finishes the Embedded Signup flow
+      if (eventData.event === "FINISH") {
+        const { phone_number_id, waba_id } = eventData.data;
+        console.log(
+          `[sessionInfoListener] wabaId => [${waba_id}],PhoneId => [${phone_number_id}]`
+          // newWaba: request ChatappBindWaba https://www.alibabacloud.com/help/zh/cams/latest/api-cams-2020-06-06-chatappbindwaba?spm=a2c63.p38356.0.0.5c934997Z3EJNa  
+          // addPhoneNumber: request ChatappSyncPhoneNumber https://www.alibabacloud.com/help/zh/cams/latest/api-cams-2020-06-06-chatappsyncphonenumber?spm=a2c63.p38356.0.0.452749976eL7Up
+        );
+      }
+      // if user cancels the Embedded Signup flow
+      else {
+        const { currentStep } = eventData.data;
+      }
+    }
+  } catch {
+    // Don’t parse info that’s not a JSON
+    console.log("Non JSON Response", event.data);
+  }
+};
+
+  
+
   // Facebook Login with JavaScript SDK
   function launchWhatsAppSignup() {
     // Conversion tracking code
@@ -99,7 +128,7 @@ src="https://www.facebook.com/tr?id=648593814132686&ev=PageView&noscript=1"
         console.log('User cancelled login or did not fully authorize.');
       }
     },  
-    {	
+    { 
       config_id: 993951181897221, // configuration ID goes here
       response_type: 'code',    // must be set to 'code' for System User access token
       override_default_response_type: true, // when true, any response types passed in the "response_type" will take precedence over the default types
@@ -144,7 +173,6 @@ feature: 'whatsapp_embedded_signup',
 </button>
 
 <!---------------END-- EMBEDDED WHATSAPP---------------------------------->
-
 <!-- banner -->
 <div class="banner_top" id="home">
 	<div data-vide-bg ="video/saba.mp4">
