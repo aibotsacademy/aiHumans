@@ -33,19 +33,6 @@ p,ul,ol{
   height: 100%;
   object-fit: cover;
 }
-
-.center-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  /* Add any additional styling as needed */
-}
-
-.w3_agile_header {
-  /Aqui acaba codigo demo GPT - Linea 27 a la 57/
-}
 .iframe-container {
   position: relative;
   width: 100%;
