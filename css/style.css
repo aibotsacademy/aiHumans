@@ -30,6 +30,21 @@ p,ul,ol{
 	height: 100%;
 	object-fit: cover;
 }
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 148.125%; /* Adjust this value based on the aspect ratio of the iframe */
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 input[type="submit"],a,.nbs-flexisel-nav-left,.nbs-flexisel-nav-right{
 	transition:.5s ease-in;
 	-webkit-transition:.5s ease-in;
