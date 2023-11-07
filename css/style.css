@@ -27,13 +27,6 @@ p,ul,ol{
 .banner_top {
   position: relative;
 }
-
-.background-video {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
-}
-
 .background-video {
   position: absolute;
   top: 0;
