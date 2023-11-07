@@ -24,9 +24,7 @@ ul{
 p,ul,ol{
 	font-size:14px;
 }
-.banner_top {
-  position: relative;
-}
+
 .background-video {
   position: absolute;
   top: 0;
