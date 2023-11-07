@@ -43,6 +43,12 @@ p,ul,ol{
   width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 768px) {
+  /* Adjust the width and height as needed for smaller screens */
+  .iframe-container {
+    padding-bottom: 75%; /* Adjust this value based on the aspect ratio of the iframe */
+  }
+}
 
 
 input[type="submit"],a,.nbs-flexisel-nav-left,.nbs-flexisel-nav-right{
