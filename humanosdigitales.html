@@ -37,6 +37,13 @@
 </head>
 <body>
 
+function trackEvent(eventName, label) {
+  analytics.track(eventName, {
+    label: label,
+    page: 'humanosdigitales.html'
+  });
+}
+
 <!-- banner -->
 <div class="banner_top" id="home">
 	<div data-vide-bg ="video/saba.mp4">
@@ -58,8 +65,7 @@
 								<nav class="mobile-menu">
 									<ul>
 										<li><a href="servicios.html" >Servicios</a></li>
-										<li><a href="humanosdigitales.html" >Humanos Digitales</a></li>
-										<li><a href="bots.html" >Chatbots</a></li>
+<li><a href="humanosdigitales.html" onclick="trackEvent('Menu Click', 'Humanos Digitales')">Humanos Digitales</a></li>										<li><a href="bots.html" >Chatbots</a></li>
 										<li><a href="demo.html" >Demos En Vivo</a></li>
 										<li><a href="#services" class="scroll" >Nosotros</a></li>					
 									</ul>
