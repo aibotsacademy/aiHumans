@@ -44,6 +44,16 @@
 
   ></script>
 
+<script>
+function trackEvent(eventName, label) {
+  analytics.track(eventName, {
+    label: label,
+    page: 'humanosdigitales.html'
+  });
+}
+</script>
+
+
 <!-- banner -->
 <div class="banner_top" id="home">
 	<div data-vide-bg ="video/saba.mp4">
