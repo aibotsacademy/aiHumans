@@ -21,8 +21,48 @@
 <!-- //font-awesome-icons -->
 <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+<script type="importmap">
+   {
+     "imports": {
+       "@google/generative-ai": "https://esm.run/@google/generative-ai"
+     }
+   }
+</script>
+
 </head>
 <body>
+
+<!-- ... Your HTML and CSS -->
+   <!-- Import @google/generative-ai, as shown above. -->
+   <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+
+      // Fetch your API_KEY
+      const API_KEY = "AIzaSyCn2b0NHcLBXnm2T6rGxRVfkVwODh_eSls";
+
+      // Access your API key (see "Set up your API key" above)
+      const genAI = new GoogleGenerativeAI(API_KEY);
+
+      // ...
+
+      // For text-only input, use the gemini-pro model
+      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+
+async function run() {
+  const prompt = "Write a story about Gemini"
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+}
+
+run();
+      // ...
+   </script>
+
 
 
 <div class="banner_top" id="home">
